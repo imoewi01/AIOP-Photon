@@ -1,0 +1,1 @@
+A simplified simulation model that accurately models the physical effects of backlash in our motor and gear systems. This initial simulation was used as the basis for a future, more detailed simulation model. 

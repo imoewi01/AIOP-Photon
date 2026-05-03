@@ -1,0 +1,1 @@
+This directory contains the commands that were used to retrieve archived experimental controls data. The commands use the Jefferson Lab EPICS archiver, called MYA, to retrieve this information. Each command gets the history for a single variable between starting and ending time stamps, and outputs them to a text file. 

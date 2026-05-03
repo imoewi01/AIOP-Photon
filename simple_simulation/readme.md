@@ -1,1 +1,0 @@
-A simplistic simulation that uses a goniometer object to track backlash. This code can be used to initially train an RL agent, but a more realistic sim using the beam spot finder algorithm should be used in the end. 

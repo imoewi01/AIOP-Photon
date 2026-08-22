@@ -14,20 +14,15 @@ def clean_file(inputFilePath, ColumnName, outputFilePath, badValues=["<<","Netwo
 
     with open(inputFilePath,"r") as file:
 
-        line_list = file.readlines()
-
-        for line in line_list:
+        for line in file:
 
             # element zero is date, 1 is time, 3 is column from EPICS (assuming no spaces)
             split_line = line.split()
 
 
-            # catches "<< Network disconnection >>", and can add bad vals (ie like run number of 0)
-            if split_line[2] in badValues:
-                print(split_line)
-                split_line[2] = "Undefined"
-
-                continue # for now just skip if it is undefined or 0
+            # cases where the data is malformed
+            if len(split_line)!=3:
+                continue # skip the line, no useful information for this variable
 
             output_time = split_line[0]+"T"+split_line[1]
             # convert split_line[0] and split_line[1] to a python datetime friendly format for later
@@ -57,7 +52,7 @@ def clean_file(inputFilePath, ColumnName, outputFilePath, badValues=["<<","Netwo
 # these will later be merged into a single csv
 if __name__ == "__main__":
 
-    run_periods = ["Spring2020","Spring2023","Spring2025"]
+    run_periods = ["Spring20","Spring23","Spring25"]
 
     for runPeriod in run_periods:
         # all run configuration info

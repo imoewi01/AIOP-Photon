@@ -1,0 +1,6 @@
+plots/
+rawData/
+csv_data/
+.DS_Store
+../.DS_Store
+src/__pycache__/
